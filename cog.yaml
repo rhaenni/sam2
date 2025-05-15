@@ -22,7 +22,6 @@ build:
   run:
     - git clone https://github.com/facebookresearch/segment-anything-2.git /sa2
     - cd /sa2 && CUDA_SELECT_NVCC_ARCH_FLAGS="8.0;8.6" TORCH_CUDA_ARCH_LIST="8.0;8.6" CUDA_ARCH_LIST="8.0;8.6" CUDA_HOME=/usr/local/cuda mount=type=cache,target=/root/.cache/pip pip install -e .
-    - cd /sa2 && wget -O checkpoints/sam2_hiera_large.pt https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt
     - wget -O /sa2/checkpoints/sam2.1_hiera_large.pt https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt
 
 # predict.py defines how predictions are run on your model
