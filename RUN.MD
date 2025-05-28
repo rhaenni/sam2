@@ -4,7 +4,11 @@ Install Cog from https://github.com/replicate/cog/blob/main/docs/getting-started
 
 ```sudo cog build -t sam2 --separate-weights```
 # TEst
+Auto Mode (automatically find all masks in image by point grid approach)
 ```cog predict -i image=@test/easy_en_singles.jpg```
+
+Single Mode (find a mask in the image given a reference point coordinate)
+```cog predict -i image=@test/easy_en_singles.jpg -i mode=single -i point_coords_str="[[100,200]]" -i point_labels_str="[1]"```
 
 # Running
 ```docker run --gpus all --rm -p 5000:5000```
